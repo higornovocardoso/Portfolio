@@ -1,0 +1,12 @@
+# Only the site itself is published; docs and tooling stay in the repository
+.github
+docs
+tests
+node_modules
+package.json
+package-lock.json
+playwright.config.js
+.htmlvalidate.json
+.editorconfig
+README.md
+LICENSE
