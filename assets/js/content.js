@@ -17,10 +17,10 @@ export const projects = [
     title: { pt: "Logística que Aquece", en: "Logística que Aquece" },
     desc:  { pt: "Sistema de controle de estoque desenvolvido para a Rede Feminina de Garopaba. Foi o primeiro sistema que desenvolvi e marcou o início da minha carreira. Criado para a campanha de agasalhos promovida pelo SENAI, organizou as roupas arrecadadas que a Rede Feminina doou a pessoas em situação de vulnerabilidade durante o inverno de 2025, em Garopaba.",
              en: "An inventory control system developed for Rede Feminina de Garopaba. It was the first system I built and marked the start of my career. Created for a winter clothing drive organized by SENAI, it managed the donated clothes that Rede Feminina distributed to people in need during the winter of 2025 in Garopaba." },
-    tags: ["JavaScript", "TypeScript", "HTML"]
+    tags: ["TypeScript", "PL/pgSQL", "CSS"]
   },
   {
-    url: "https://github.com/higornovocardoso/central-de-chamados-de-ti",
+    url: "https://github.com/higornovocardoso/Central-de-Chamados",
     title: { pt: "Central de Chamados", en: "Central de Chamados" },
     desc:  { pt: "Sistema de gestão de chamados inspirado no GLPI, desenvolvido para os escritórios de contabilidade aos quais, além do desenvolvimento de sistemas, presto serviços de T.I.",
              en: "A ticket management system inspired by GLPI, built for the accounting firms where, in addition to software development, I provide IT services." },

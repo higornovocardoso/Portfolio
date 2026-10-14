@@ -27,7 +27,7 @@ test("mostra os projetos com os links certos", async ({ page }) => {
   const cards = page.locator("#projects .proj");
   await expect(cards).toHaveCount(3);
   await expect(page.locator('#projects a.proj[href*="Logisteca-que-Aquece"]')).toHaveCount(1);
-  await expect(page.locator('#projects a.proj[href*="central-de-chamados-de-ti"]')).toHaveCount(1);
+  await expect(page.locator('#projects a.proj[href*="Central-de-Chamados"]')).toHaveCount(1);
   await expect(page.locator('#projects a.proj[href*="Portal-Compliance-Contabil"]')).toHaveCount(1);
   for (const a of await page.locator("#projects a.proj").all()) {
     await expect(a).toHaveAttribute("target", "_blank");
