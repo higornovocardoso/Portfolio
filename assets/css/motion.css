@@ -1,0 +1,38 @@
+/* Motion: the opening, scroll reveals, the custom cursor and the reduced-motion fallback. */
+/* ---------- opening: a seed of light bursts into the sphere, then the name rises ---------- */
+.seed{position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;pointer-events:none;
+  background:var(--accent);box-shadow:0 0 24px 6px var(--accent),0 0 90px 30px var(--accent-soft);opacity:0;transform:scale(0)}
+.seed.on{animation:seedIn .75s var(--ease) forwards}
+.seed.go{animation:seedBang .6s ease-out forwards}
+@keyframes seedIn{0%{opacity:0;transform:scale(0)}60%{opacity:1;transform:scale(1.35)}100%{opacity:1;transform:scale(1)}}
+@keyframes seedBang{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(10)}}
+.bar,.hero-role,.hero-foot,.hero .glow{transition:opacity 1s var(--ease) .45s}
+.pre .bar,.pre .hero-role,.pre .hero-foot,.pre .hero .glow{opacity:0}
+
+/* ---------- scroll animations: items appear as they come into view and leave again when you scroll back up past them ---------- */
+html.pre body{overflow:hidden}
+.progress{position:fixed;left:0;right:0;top:0;height:2px;z-index:60;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+.rv{transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.off{opacity:0;transform:translateY(32px)}
+[data-split] .w{display:inline-block;white-space:nowrap}
+[data-split] .ch{display:inline-block;transition:transform .9s var(--ease),opacity .6s ease;transition-delay:calc(var(--i) * 45ms)}
+[data-split].off .ch{opacity:0;transform:translateY(.6em) rotate(8deg);transition-delay:calc((var(--n, 0) - var(--i)) * 22ms)}
+[data-words] .wd{display:inline-block;transition:transform .8s var(--ease),opacity .8s ease;transition-delay:calc(var(--i) * 22ms)}
+[data-words].off .wd{opacity:0;transform:translateY(.5em);transition-delay:calc((var(--n, 0) - var(--i)) * 10ms)}
+.stagger > *{transition:opacity .8s var(--ease),transform .8s var(--ease),background .4s;transition-delay:calc(var(--i, 0) * 90ms)}
+.stagger.off > *{opacity:0;transform:translateY(28px);transition-delay:calc((var(--n, 0) - var(--i, 0)) * 50ms)}
+.nav a.active::after{right:0}
+
+/* cursor */
+.cur{position:fixed;left:0;top:0;z-index:90;pointer-events:none;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;
+  background:var(--paper);mix-blend-mode:difference;transition:width .18s var(--ease),height .18s var(--ease),margin .18s var(--ease);
+  display:grid;place-items:center;opacity:0}
+.cur span{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#000;opacity:0;transition:opacity .12s}
+.cur.big{width:78px;height:78px;margin:-39px 0 0 -39px}
+.cur.big span{opacity:1}
+@media (hover:hover) and (pointer:fine){.cur.live{opacity:1}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}

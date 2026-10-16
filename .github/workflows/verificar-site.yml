@@ -1,0 +1,55 @@
+name: Verificar site
+
+# Roda a cada push e pull request, e toda segunda-feira (para avisar se algum link externo quebrar).
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+
+jobs:
+  html-e-testes:
+    name: HTML e testes no navegador
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Validar HTML
+        run: npm run validar
+      - name: Instalar navegador
+        run: npx playwright install --with-deps chromium
+      - name: Testes (computador e celular)
+        run: npm run testar
+      - name: Guardar relatório se falhar
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-playwright
+          path: playwright-report
+          retention-days: 7
+
+  links:
+    name: Links externos
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verificar links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          fail: true
+          # LinkedIn bloqueia robôs (responde 999) e o Portal Compliance é privado de propósito (404 para visitantes).
+          args: >-
+            --no-progress
+            --root-dir "${{ github.workspace }}"
+            --exclude "linkedin\.com"
+            --exclude "github\.com/higornovocardoso/Portal-Compliance-Contabil"
+            --exclude "fonts\.gstatic\.com"
+            --exclude "^https://higornovocardoso\.com/"
+            index.html 404.html

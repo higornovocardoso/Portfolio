@@ -1,0 +1,11 @@
+/* Not-found page. Uses the tokens and helpers from tokens.css and base.css. */
+body.notfound{margin:0;min-height:100svh;display:grid;place-content:center;gap:28px;padding:32px clamp(16px,4vw,56px);
+  background:var(--ink);color:var(--paper);font-family:"Instrument Sans",system-ui,sans-serif;text-align:center}
+.notfound h1{margin:0}
+.notfound .code{font-family:"Archivo","Arial Black",sans-serif;font-variation-settings:"wdth" 125;font-weight:800;font-size:clamp(5rem,22vw,14rem);
+  line-height:.85;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1.5px var(--accent)}
+.notfound p{margin:0;font-size:1.15rem;color:var(--mute)}
+.notfound a{justify-self:center;display:inline-flex;align-items:center;gap:10px;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.75rem;
+  text-transform:uppercase;letter-spacing:.14em;padding:14px 20px;border-radius:999px;background:var(--accent);color:var(--accent-ink);text-decoration:none}
+.notfound a:hover{background:var(--paper)}
+.notfound a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
