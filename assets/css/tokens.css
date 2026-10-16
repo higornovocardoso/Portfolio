@@ -1,0 +1,21 @@
+/* Design tokens: the whole palette, type stack and spacing scale live here. */
+:root{
+  --ink:#0A0B10;
+  --ink-2:#12141B;
+  --line:#242733;
+  --paper:#ECEBE6;
+  --mute:#8D909C;
+  --accent:#5B6BFF;
+  --accent-ink:#0A0B10;
+  --accent-soft:rgba(91,107,255,.14);
+
+  --f-display:"Archivo","Arial Black","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+
+  --gutter:clamp(16px,4vw,56px);
+  --t-xs:.75rem; --t-sm:.875rem; --t-md:1.0625rem; --t-lg:clamp(1.25rem,2.2vw,1.75rem);
+  --t-xl:clamp(1.9rem,4.6vw,3.6rem); --t-xxl:clamp(3rem,12.5vw,13rem);
+  --ease:cubic-bezier(.2,.7,.1,1);
+  color-scheme:dark;
+}

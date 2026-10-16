@@ -1,0 +1,22 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "description": "Portfólio de Higor Cardoso. O site não tem build; este arquivo só lista as ferramentas de teste.",
+  "homepage": "https://higornovocardoso.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/higornovocardoso/Portfolio.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "validar": "html-validate index.html 404.html",
+    "testar": "playwright test",
+    "verificar": "npm run validar && npm run testar",
+    "servir": "http-server . -p 4173 -a 127.0.0.1 -c-1 -s"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.48.2",
+    "html-validate": "8.24.2",
+    "http-server": "14.1.1"
+  }
+}
