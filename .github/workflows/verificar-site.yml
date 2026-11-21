@@ -49,7 +49,7 @@ jobs:
             --no-progress
             --root-dir "${{ github.workspace }}"
             --exclude "linkedin\.com"
-            --exclude "github\.com/higornovocardoso/Portal-Compliance-Contabil"
+            --exclude "github\.com/compliancecontabil/Portal-Compliance-Contabil"
             --exclude "fonts\.gstatic\.com"
             --exclude "^https://higornovocardoso\.com/"
             index.html 404.html

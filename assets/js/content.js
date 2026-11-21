@@ -27,11 +27,11 @@ export const projects = [
     tags: ["TypeScript", "PL/pgSQL", "CSS"]
   },
   {
-    url: "https://github.com/higornovocardoso/Portal-Compliance-Contabil",   // private: only people given access can open it
+    url: "https://github.com/compliancecontabil/Portal-Compliance-Contabil",   // private: only people given access can open it
     title: { pt: "Portal Compliance", en: "Portal Compliance" },
-    desc:  { pt: "Plataforma de automação contábil da Compliance Contábil, responsável pela emissão automática de guias fiscais (DARF DCTFWeb, DAS do Simples Nacional e DAS MEI) e pelo controle de certificados digitais.",
-             en: "Compliance Contábil's accounting automation platform, responsible for automatically issuing tax payment slips (DARF DCTFWeb, Simples Nacional DAS and MEI DAS) and for managing digital certificates." },
-    tags: ["Python", "TypeScript", "JavaScript", "PowerShell"]
+    desc:  { pt: "Plataforma interna de automação contábil da Compliance Contábil. Emite e transmite a DCTFWeb pelo SERPRO Integra Contador, gera as guias do FGTS Digital e acompanha a Caixa Postal do e-CAC, a situação fiscal, as certidões, as procurações e os certificados digitais de todos os clientes, com os documentos fiscais resumidos pela IA do Claude. Também confere o IBS/CBS das notas fiscais com a calculadora oficial da Receita Federal, recebe fichas de admissão por link, lê convenções coletivas e cobra honorários pelo WhatsApp, avisando cada responsável pelo Teams e por e-mail e guardando tudo no SharePoint.",
+             en: "Compliance Contábil's internal accounting automation platform. It issues and files the DCTFWeb through SERPRO Integra Contador, generates FGTS Digital payment slips and monitors every client's e-CAC mailbox, tax status, clearance certificates, powers of attorney and digital certificates, with tax documents summarized by Claude AI. It also checks the IBS/CBS on invoices against the Brazilian Federal Revenue's official calculator, collects hiring forms through a shareable link, reads collective bargaining agreements and sends fee reminders over WhatsApp, notifying each person in charge on Teams and by email and filing everything in SharePoint." },
+    tags: ["Python", "TypeScript", "Shell", "CSS"]
   }
 ];
 
